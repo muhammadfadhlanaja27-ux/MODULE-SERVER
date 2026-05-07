@@ -59,19 +59,14 @@ class AuthController extends Controller
             $request->all(),
             [
                 'full_name' => 'required|string',
-                'username' => [
-                    'required',
-                    'min:3',
-                    'unique:users,username',         // Username harus unik di tabel users
-                    'regex:/^[a-zA-Z0-9._]+$/',     // Hanya huruf, angka, titik, underscore
-                ],
+                'username' => ['required', 'min:3', 'unique:users,username', 'regex:/^[a-zA-Z0-9._]+$/'], // Hanya huruf, angka, titik, underscore
                 'password' => 'required|min:6',    // Minimal 6 karakter
             ],
             [
                 // Pesan validasi custom agar lebih informatif
                 'username.regex' => 'The username may only contain letters, numbers, dots, and underscores.',
                 'username.unique' => 'The username has already been taken.',
-            ]
+        ]
         );
 
         // Jika validasi gagal, kembalikan error 400

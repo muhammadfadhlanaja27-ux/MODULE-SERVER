@@ -29,21 +29,6 @@ class CourseController extends Controller
      * artinya kursus tidak langsung tampil ke publik sebelum diterbitkan via B2.
      *
      * @route  POST /api/courses
-     * @access Admin only
-     *
-     * @bodyParam string $name         required  Nama kursus.
-     * @bodyParam string $slug         required  Slug unik untuk URL (contoh: "belajar-laravel").
-     * @bodyParam string $description  nullable  Deskripsi kursus (boleh kosong).
-     *
-     * @response 201 {
-     *   "status": "success",
-     *   "message": "Course successfully added",
-     *   "data": { "id", "name", "slug", "description", "is_published", "created_at", "updated_at" }
-     * }
-     * @response 400 { "status": "error", "message": "Invalid field(s) in request", "errors": {} }
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
      */
 
     public function adminIndex()
