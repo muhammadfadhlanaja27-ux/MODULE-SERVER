@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -19,7 +19,6 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        // Handle response 401 otomatis jika token tidak valid
         $exceptions->render(function (
             \Illuminate\Auth\AuthenticationException $e,
             \Illuminate\Http\Request $request

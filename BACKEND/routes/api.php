@@ -20,6 +20,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // Admin only
     Route::middleware('is.admin')->group(function () {
         // Course
+
+        Route::get('/admin/courses', [CourseController::class, 'adminIndex']);
+        
         Route::post('/courses',                 [CourseController::class, 'store']);
         Route::put('/courses/{course_slug}',    [CourseController::class, 'update']);
         Route::delete('/courses/{course_slug}', [CourseController::class, 'destroy']);
